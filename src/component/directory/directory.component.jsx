@@ -1,6 +1,13 @@
 import React from 'react';
 
+import './directory.style.scss'
 import MenuItem from '../menu-item/menu-item.component';
+import hats from "../../img/hats.jpg";
+import jacket from "../../img/jacket.jpg";
+import men from "../../img/men.jpg";
+import sniker from "../../img/sniker.jpg";
+import women from "../../img/women.jpg";
+
 
 export class Directory extends React.Component {
 
@@ -11,35 +18,35 @@ export class Directory extends React.Component {
             sections: [
               {
                 title: 'hats',
-                imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                imageUrl: hats,
                 id: 1,
                 size: 'small',
                 linkUrl: 'hats'
               },
               {
                 title: 'jackets',
-                imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                imageUrl: jacket,
                 id: 2,
                 size: 'small',
                 linkUrl: 'jackets'
               },
               {
                 title: 'sneakers',
-                imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+                imageUrl: sniker,
                 id: 3,
                 size: 'small',
                 linkUrl: 'sneakers'
               },
               {
                 title: 'womens',
-                imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                imageUrl: women,
                 id: 4,
                 size: 'large',
                 linkUrl: 'womens'
               },
               {
                 title: 'mens',
-                imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                imageUrl: men,
                 id: 5,
                 size: 'large',
                 linkUrl: 'mens'
