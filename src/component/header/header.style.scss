@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    height: 50px;
+    justify-content: space-between;
+    padding: 7.5px 7.5px 7.5px 7.5px;
+
+    .logo-container {
+        .logo {
+
+        }
+    }
+
+    .menu-container {
+
+        a {
+            text-decoration: none;
+        }
+
+        .header-menu {
+            align-content: center;
+            line-height: 50px;
+            padding: 0 10px 0 10px;
+        }
+
+    }
+}
