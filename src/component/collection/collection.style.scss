@@ -1,0 +1,14 @@
+.collection {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.title {
+    width: 100%;
+    padding: 20px 0 20px 0;
+}
