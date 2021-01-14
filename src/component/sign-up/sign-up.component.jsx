@@ -1,12 +1,17 @@
 import React from 'react';
 
+import Input from '../input/input.component';
+import Button from '../button/button.component';
+
 export class SignUp extends React.Component {
 
-    constructor(){
+    constructor() {
         super()
         this.state = {
-            username: '',
-            password: ''
+            firstname: '',
+            lastName: '',
+            email: '',
+            password: '',
         }
     }
 
@@ -20,10 +25,45 @@ export class SignUp extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                <input type="text" name="username" id="username" onChange={this.onChange}/>
-                <input type="password" name="password" id="password" onChange={this.onChange}/>
-            </form>
+            <div>
+                <h2>Sign up with your email and password</h2>
+
+                <form onSubmit={this.onSubmit}>
+                    <Input type="text"
+                        name="firstName"
+                        label="First Name"
+                        placeholder="John"
+                        onChange={this.onChange}
+                        value={this.state.firstname}
+                        required />
+
+                    <Input type="text"
+                        name="lastName"
+                        label="Last Name"
+                        placeholder="Smith"
+                        onChange={this.onChange}
+                        value={this.state.lastName} 
+                        required />
+
+                    <Input type="email"
+                        name="email"
+                        label="Email"
+                        placeholder="user@domain.com"
+                        onChange={this.onChange} 
+                        value={this.state.email}
+                        required/>
+
+                    <Input type="password"
+                        name="password"
+                        label="Password"
+                        placeholder="Your Password"
+                        onChange={this.onChange} 
+                        value={this.state.password}
+                        required/>
+
+                    <Button type="submit" text="Sign-up" onSubmit={this.onSubmit} />
+                </form>
+            </div>
         );
     }
 
