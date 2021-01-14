@@ -8,7 +8,7 @@ export class SignIn extends React.Component {
     constructor(){
         super()
         this.state = {
-            username: '',
+            email: '',
             password: ''
         }
     }
@@ -28,16 +28,18 @@ export class SignIn extends React.Component {
 
                 <form onSubmit={this.onSubmit}>
                     <Input type="text" 
-                        id="username" 
+                        name="email" 
                         label="Email" 
                         placeholder="user@domain.com" 
-                        onChange={this.onChange} />
+                        onChange={this.onChange} 
+                        value={this.state.email}/>
                     
                     <Input type="password" 
-                        id="password" 
+                        name="password" 
                         label="Password" 
-                        placeholder="Your Krown Password" 
-                        onChange={this.onChange} />
+                        placeholder="Your Password" 
+                        onChange={this.onChange} 
+                        value={this.state.password}/>
 
                     <Button type="submit" text="Login" onSubmit={this.onSubmit}/>
                 </form>

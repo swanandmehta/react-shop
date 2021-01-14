@@ -1,16 +1,15 @@
 import './input.style.scss';
 
-const Input = ({type, id, onChange, placeholder, label, ...other}) => {
+const Input = ({type, name, onChange, placeholder, label, ...other}) => {
     return (
         <div className="input-container">
             {
                 label != null ? 
-                <label for={id} className="label">{label}</label> : null 
+                <label className="label">{label}</label> : null 
             }
             <input className="input" 
                 type={type} 
-                id={id} 
-                name={id} 
+                name={name} 
                 placeholder={placeholder} 
                 onChange={onChange} 
                 {...other} />
