@@ -1,0 +1,14 @@
+.button-container {
+    width: 100%;
+    padding: 10px 0 10px 0;
+
+    .button {
+        min-width: 50px;
+        padding: 10px;
+        background-color: black;
+        color: whitesmoke;
+        box-shadow: none;
+        border-radius: 5px;
+        border: none;
+    }
+}

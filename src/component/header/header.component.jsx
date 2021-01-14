@@ -13,7 +13,7 @@ export const Header = () => {
             <div className="menu-container">
                 <Link className="header-menu" to="/shop">SHOP</Link>
                 <Link className="header-menu" to="/contact">CONTACT</Link>
-                <Link className="header-menu" to="/sign-up">SIGN IN</Link>
+                <Link className="header-menu" to="/auth">SIGN IN</Link>
                 <Link className="header-menu" to="/cart">CART</Link>
             </div>
         </header>
