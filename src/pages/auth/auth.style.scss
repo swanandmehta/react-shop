@@ -1,0 +1,15 @@
+.auth {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex: 1 1 auto;
+
+    .sign-in {
+        width: 45%;
+    }
+
+    .sign-up {
+        width: 45%;
+    }
+}
