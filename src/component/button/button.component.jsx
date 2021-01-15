@@ -1,10 +1,10 @@
 import './button.style.scss';
 
-const Button = ({type, text, onSubmit, ...other}) => {
+const Button = ({text, ...other}) => {
     return (
         <div className="button-container">
-            <button className="button" type={type} onSubmit={onSubmit} {...other} >
-                {text}
+            <button className="button" {...other} >
+                {text.toUpperCase()}
             </button>
         </div>
     );
