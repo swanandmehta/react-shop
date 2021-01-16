@@ -15,35 +15,48 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const provider = new firebase.auth.GoogleAuthProvider();
 
+async function createUser(name) {
+    const user = auth.currentUser;
+    const userDataLocationRef = firestore.doc(`user/${user.uid}`);
+    const date = new Date();
+    await userDataLocationRef.set({
+        name: user.displayName ? user.displayName : name,
+        email: user.email,
+        creationDate: date,
+    })
+
+}
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+
 export const signInWithGoogle = async () => {
-    await auth.signInWithPopup(provider);
+    await auth.signInWithPopup(provider).then(
+        () => createUser("DEFAULT")
+    );
 };
+
+export const signInWithEmail = async (email, password) => {
+    return auth.signInWithEmailAndPassword(email, password)
+}
+
+export const signUpWithEmail = async (email, password, name) => {
+    auth.createUserWithEmailAndPassword(email, password).then(
+        (user) => {
+            createUser(name);
+            auth.currentUser.updateProfile({displayName: name});
+        }
+    )
+}
 
 export const userLogout = async () => {
     await auth.signOut();
 }
 
 export const getUserDataRef = async (user) => {
-    if (user != null){
+    if (user != null) {
         const userDataLocationRef = firestore.doc(`user/${user.uid}`);
-        const userDataRef = await userDataLocationRef.get();        
-
-        if(!userDataRef.exists){
-            const date = new Date();
-            try {
-                await userDataLocationRef.set({
-                    name: user.displayName,
-                    email: user.email,
-                    creationDate: date,
-                })
-            }catch (e) {
-                return null;
-            }
-
-        }
-
+        const userDataRef = await userDataLocationRef.get();
         return userDataRef;
     }
 

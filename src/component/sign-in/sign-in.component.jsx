@@ -4,6 +4,7 @@ import './sign-in.style.scss';
 import Input from '../input/input.component';
 import Button from '../button/button.component';
 import { signInWithGoogle } from '../../firebase/firebase.utils';
+import { signInWithEmail } from '../../firebase/firebase.utils';
 
 export class SignIn extends React.Component {
 
@@ -15,12 +16,13 @@ export class SignIn extends React.Component {
         }
     }
 
-    onChange(e) {
-        console.log(e);
+    onChange = (event) => {
+        this.setState({[event.target.name] : event.target.value});
     }
 
-    onSubmit(e) {
-        e.preventDefault();
+    onSubmit = (event) => {
+        event.preventDefault();
+        signInWithEmail(this.state.email, this.state.password);
     }
 
     render() {
