@@ -17,4 +17,35 @@ const provider = new firebase.auth.GoogleAuthProvider();
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = async () => {
+    await auth.signInWithPopup(provider);
+};
+
+export const userLogout = async () => {
+    await auth.signOut();
+}
+
+export const getUserDataRef = async (user) => {
+    if (user != null){
+        const userDataLocationRef = firestore.doc(`user/${user.uid}`);
+        const userDataRef = await userDataLocationRef.get();        
+
+        if(!userDataRef.exists){
+            const date = new Date();
+            try {
+                await userDataLocationRef.set({
+                    name: user.displayName,
+                    email: user.email,
+                    creationDate: date,
+                })
+            }catch (e) {
+                return null;
+            }
+
+        }
+
+        return userDataRef;
+    }
+
+    return null;
+}
