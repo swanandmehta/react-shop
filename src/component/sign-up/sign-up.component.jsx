@@ -3,24 +3,27 @@ import React from 'react';
 import Input from '../input/input.component';
 import Button from '../button/button.component';
 
+import { signUpWithEmail } from '../../firebase/firebase.utils';
+
 export class SignUp extends React.Component {
 
     constructor() {
         super()
         this.state = {
-            firstname: '',
-            lastName: '',
+            name: '',
             email: '',
             password: '',
         }
     }
 
-    onChange(e) {
-        console.log(e);
+    onChange = (event) => {
+        this.setState({[event.target.name] : event.target.value});
+
     }
 
-    onSubmit(e) {
-        console.log(e);
+    onSubmit = (event) => {
+        event.preventDefault();
+        signUpWithEmail(this.state.email, this.state.password, this.state.name);
     }
 
     render() {
@@ -30,19 +33,11 @@ export class SignUp extends React.Component {
 
                 <form onSubmit={this.onSubmit}>
                     <Input type="text"
-                        name="firstName"
-                        label="First Name"
-                        placeholder="John"
+                        name="name"
+                        label="Name"
+                        placeholder="John Smith"
                         onChange={this.onChange}
-                        value={this.state.firstname}
-                        required />
-
-                    <Input type="text"
-                        name="lastName"
-                        label="Last Name"
-                        placeholder="Smith"
-                        onChange={this.onChange}
-                        value={this.state.lastName} 
+                        value={this.state.name}
                         required />
 
                     <Input type="email"

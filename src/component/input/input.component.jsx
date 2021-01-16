@@ -8,7 +8,7 @@ const Input = ({type, name, onChange, placeholder, label, ...other}) => {
                 <label className="label">{label}</label> : null 
             }
             <input className="input"
-                autoComplete='on' 
+                autoComplete='off' 
                 type={type} 
                 name={name} 
                 placeholder={placeholder} 
