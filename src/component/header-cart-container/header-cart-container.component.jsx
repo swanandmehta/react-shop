@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import HeaderCartItem from '../header-cart-item/header-cart-item.component';
 import Button from '../button/button.component';
+import { selectItems } from '../../redux/cart/cart.selector';
 
 import './header-cart-container.style.scss';
 
@@ -21,7 +22,7 @@ const HeaderCartContainer = ({cart}) => {
 
 const mapStateToProp = (state) => {
     return  {
-        cart : state.cart.cart
+        cart : selectItems(state)
     }
 }
 

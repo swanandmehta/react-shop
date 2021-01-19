@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import { userLogout } from '../../firebase/firebase.utils';
 import HeaderCartContainer from '../header-cart-container/header-cart-container.component';
 import { toggleCart } from '../../redux/cart/cart.action';
+import { selectVisible } from '../../redux/cart/cart.selector';
+import { selectActiveUser } from '../../redux/user/user.selector';
 
 const Header = ({ currentUser, showCart, toggleCartHandler }) => {
     return (
@@ -36,8 +38,8 @@ const Header = ({ currentUser, showCart, toggleCartHandler }) => {
 
 const mapStateToProps = (state) => {
     return  {
-        currentUser: state.user.activeUser,
-        showCart: state.cart.visible
+        currentUser: selectActiveUser(state),
+        showCart: selectVisible(state)
     };
 };
 
