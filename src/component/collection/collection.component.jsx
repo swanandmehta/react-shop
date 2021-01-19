@@ -18,7 +18,7 @@ class Collection extends React.Component {
             <div className="collection">
                 <h3 className="title">{this.props.type.toUpperCase()}</h3>
                 {
-                    products.map(element => <CollectionItem key={element.id} {...element} />)
+                    products.map(element => <CollectionItem key={element.id} item={element} />)
                 }
             </div>
         );

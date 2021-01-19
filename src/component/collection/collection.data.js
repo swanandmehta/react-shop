@@ -44,30 +44,30 @@ const SHOP_DATA = {
     ],
     "jackets": [
         {
-            id: 1,
+            id: 6,
             name: "Product 1",
             img: Img6,
             price: 10
         },
         {
-            id: 2,
+            id: 7,
             name: "Product 2",
             img: Img7,
             price: 10
         },
         {
-            id: 3,
+            id: 8,
             name: "Product 3",
             img: Img8,
             price: 10
         },
         {
-            id: 4,
+            id: 9,
             name: "Product 4",
             img: Img9,
             price: 10
         },        {
-            id: 5,
+            id: 10,
             name: "Product 5",
             img: Img10,
             price: 10
@@ -75,30 +75,30 @@ const SHOP_DATA = {
     ],
     "sneakers": [
         {
-            id: 1,
+            id: 11,
             name: "Product 1",
             img: Img1,
             price: 10
         },
         {
-            id: 2,
+            id: 12,
             name: "Product 2",
             img: Img2,
             price: 10
         },
         {
-            id: 3,
+            id: 13,
             name: "Product 3",
             img: Img3,
             price: 10
         },
         {
-            id: 4,
+            id: 14,
             name: "Product 4",
             img: Img4,
             price: 10
         },        {
-            id: 5,
+            id: 15,
             name: "Product 5",
             img: Img5,
             price: 10
@@ -106,30 +106,30 @@ const SHOP_DATA = {
     ],
     "womens": [
         {
-            id: 1,
+            id: 16,
             name: "Product 1",
             img: Img6,
             price: 10
         },
         {
-            id: 2,
+            id: 17,
             name: "Product 2",
             img: Img7,
             price: 10
         },
         {
-            id: 3,
+            id: 18,
             name: "Product 3",
             img: Img8,
             price: 10
         },
         {
-            id: 4,
+            id: 19,
             name: "Product 4",
             img: Img9,
             price: 10
         },        {
-            id: 5,
+            id: 20,
             name: "Product 5",
             img: Img10,
             price: 10
@@ -137,30 +137,30 @@ const SHOP_DATA = {
     ],
     "mens": [
         {
-            id: 1,
+            id: 21,
             name: "Product 1",
             img: Img1,
             price: 10
         },
         {
-            id: 2,
+            id: 22,
             name: "Product 2",
             img: Img2,
             price: 10
         },
         {
-            id: 3,
+            id: 23,
             name: "Product 3",
             img: Img3,
             price: 10
         },
         {
-            id: 4,
+            id: 24,
             name: "Product 4",
             img: Img4,
             price: 10
         },        {
-            id: 5,
+            id: 25,
             name: "Product 5",
             img: Img5,
             price: 10

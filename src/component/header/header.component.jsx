@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userLogout } from '../../firebase/firebase.utils';
+import HeaderCartContainer from '../header-cart-container/header-cart-container.component';
+import { toggleCart } from '../../redux/cart/cart.action';
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, showCart, toggleCartHandler }) => {
     return (
         <header className="header">
             <div className="logo-container">
@@ -22,16 +24,27 @@ const Header = ({ currentUser }) => {
                         <Link className="header-menu" to="/" onClick={() => userLogout()}>LOGOUT</Link>
                 }
 
-                <Link className="header-menu" to="/cart">CART</Link>
+                <div className="header-menu" onClick={() => toggleCartHandler()}>CART</div>
             </div>
+            {
+                showCart ? <HeaderCartContainer /> : null
+            }
+            
         </header>
     )
 };
 
 const mapStateToProps = (state) => {
     return  {
-        currentUser: state.user.activeUser
+        currentUser: state.user.activeUser,
+        showCart: state.cart.visible
     };
 };
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleCartHandler: () => dispatch(toggleCart()) 
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
