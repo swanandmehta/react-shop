@@ -37,7 +37,6 @@ const Header = ({ currentUser, showCart, toggleCartHandler }) => {
 };
 
 const mapStateToProps = (state) => {
-    //console.log("I am being called -user")
     return  {
         currentUser: selectActiveUser(state),
         showCart: selectVisible(state)

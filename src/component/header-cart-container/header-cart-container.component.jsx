@@ -21,7 +21,6 @@ const HeaderCartContainer = ({cart}) => {
 }
 
 const mapStateToProp = (state) => {
-    //console.log("I am being called -carts")
     return  {
         cart : selectItems(state)
     }
